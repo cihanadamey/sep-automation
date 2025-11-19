@@ -10,5 +10,11 @@ Feature: Program start dates and Refund dates
 
     Background:
         Given user is on the enrollment page
+        
+    Scenario: Program start date and refund policy details are displayed
+        Then user should see Start Application on middle left of the page.
+        And  user should see number one over the Start Application text.
+        And  user should see Program Start Date.
+        And  user should see the refund policy details.
 
 

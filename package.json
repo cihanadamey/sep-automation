@@ -16,8 +16,8 @@
   "description": "",
   "type": "module",
   "devDependencies": {
-    "@playwright/test": "^1.53.2",
-    "@types/node": "^22.16.0"
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.19.1"
   },
   "dependencies": {
     "@cucumber/cucumber": "^11.3.0",
