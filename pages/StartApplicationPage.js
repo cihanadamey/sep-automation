@@ -11,7 +11,7 @@ export class StartApplicationPage extends BasePage {
       "//div[@class='step-title' and text()='Start Application']"
     );
 
-    this.paymentPlanText = page.locator("//div[@class = 'step-title'][2]");
+    this.paymentPlanText = page.locator("//div[@class='step-title' and text()='Payment plan']");
 
     this.reviewText = page.locator("//div[@class = 'step-title'][3]");
 

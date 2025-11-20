@@ -12,3 +12,22 @@ Feature: Click on the next button on step 1
 
     Background:
         Given user is on the enrollment page
+
+    @sep19-1
+    Scenario: User enters valid personal details
+        Then user enters valid first name and validates it.
+        And user enters valid last name and validates it.
+        And user enters valid email address and validates it.
+        And user enters valid phone number.
+        And user selects how did you hear about us ?.
+        And user click on the next button.
+
+    @sep19-2
+    Scenario: User should be able to see next page after clicking on next button
+        Then user enters valid first name and validates it.
+        And user enters valid last name and validates it.
+        And user enters valid email address and validates it.
+        And user enters valid phone number.
+        And user selects how did you hear about us ?.
+        And user click on the next button.
+        Then user should be on the next page.
