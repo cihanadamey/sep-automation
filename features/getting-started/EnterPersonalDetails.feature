@@ -16,3 +16,24 @@ Feature: Enter my Personal details
 
     Background:
         Given user is on the enrollment page
+
+    @sep10-1
+    Scenario: User enters valid personal details
+        Then user enters valid first name and validates it.
+        And user enters valid last name and validates it.
+        And user enters valid email address and validates it.
+        And user enters valid phone number.
+        And user selects how did you hear about us ?.
+        
+
+    @sep10-2
+    Scenario: User leaves empty first name
+        Then user leaves empty first name.
+        And user enters valid last name and validates it.
+        And user enters valid email address and validates it.
+        And user enters valid phone number.
+        And user selects how did you hear about us ?.
+        And the next button should not be clickable.
+
+    
+

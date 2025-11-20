@@ -8,16 +8,14 @@ export class StartApplicationPage extends BasePage {
     super(page);
 
     this.startApplicationText = page.locator(
-      "(//div[@class = 'step-title'])[1]"
+      "//div[@class='step-title' and text()='Start Application']"
     );
 
-    this.paymentPlanText = page.locator("(//div[@class = 'step-title'])[2]");
+    this.paymentPlanText = page.locator("//div[@class = 'step-title'][2]");
 
-    this.reviewText = page.locator("(//div[@class = 'step-title'])[3]");
+    this.reviewText = page.locator("//div[@class = 'step-title'][3]");
 
-    this.startApplicationStepCircle = page.locator(
-      "(//*[@class='step-circle'])[1]"
-    );
+    this.startApplicationStepCircle = page.locator("//span[text()='1']");
 
     this.paymentPlanStepCircle = page.locator("(//*[@class='step-circle'])[2]");
 
