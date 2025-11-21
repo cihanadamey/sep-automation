@@ -12,3 +12,30 @@ Feature: Display the steps of the checkout process
 
     Background:
         Given user is on the enrollment page
+
+        @sep08-1
+        Scenario: Start Application step 
+        When User is on the start application page
+        Then Start Application should display in blue
+        And  Payment Plan and Review should display in grey.
+
+
+    Background: 
+        Given user is on the enrollment page
+        
+
+        @sep08-2
+        Scenario: Payment Plan Page
+        When User is on the payment plan page
+        Then Payment Plan should display in blue
+        And  Start Application should display green
+        And  Review Page should display in grey.
+
+
+        @sep08-3
+        Scenario: Review Page
+        When User is on the review page
+        Then Review Page should display in blue
+        And  Start Application should display green
+        And  Payment Plan should display green
+        
