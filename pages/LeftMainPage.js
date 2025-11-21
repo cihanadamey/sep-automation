@@ -13,9 +13,24 @@ export class LeftMainPage extends BasePage {
 
     this.secureCheckout = page.locator("//p[@class='checkout-title']");
 
-    this.footerElements = page.locator(
-      "//a[contains(@href, 'https://cydeo.com/')]"
+    this.footerElements1 = page.locator(
+      "//a[contains(@href, 'https://cydeo.com/')][1]"
     );
+
+    this.footerElements2 = page.locator(
+      "//a[contains(@href, 'https://cydeo.com/')][2]"
+    );
+
+    this.footerElements3 = page.locator(
+      "//a[contains(@href, 'https://cydeo.com/')][3]"
+    );
+
+    this.footerElements4 = page.locator(
+      "//a[contains(@href, 'https://cydeo.com/')][4]"
+    );
+
+
+
 
     this.programName = page.locator("//p[@class='course-name']/a");
     
