@@ -45,6 +45,10 @@ export class PaymentPlanPage extends BasePage {
       '//*[@id="cdk-accordion-child-0"]/div/div/div[3]/mat-form-field/div[1]/div[2]/div[2]/button/span[3]'
     );
 
+    this.nextButton = page.locator("//button[@class='next-button' and text()='Next']"
+
+    );
+
     this.basePriceTextUnderUpfront = page.locator(
       "//div[@class='content-panel-item ng-star-inserted']/span[contains(text(), 'Base price')]"
     );
@@ -154,7 +158,7 @@ export class PaymentPlanPage extends BasePage {
     );
 
     this.paymentPlanBoxes = page.locator(
-      "//mat-accordion[@class='mat-accordion']/div/mat-expansion-panel/mat-expansion-panel-header"
+      "//mat-expansion-panel-header[@id='mat-expansion-panel-header-1' and contains(@class, 'plan-selected')]"
     );
 
     this.step1 = page.locator("//div[@class='step-circle'][contains(.,'1')]");
