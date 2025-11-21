@@ -1,6 +1,6 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { expect} from "@playwright/test";
-import { startApplicationPage, page } from "../../globalPagesSetup.js";
+import { startApplicationPage, page, paymentPlanPage } from "../../globalPagesSetup.js";
 import { productInfo } from "../../utilities/qa-data-reader.js";
 import { StartApplicationPage } from "../../pages/StartApplicationPage.js";
 
@@ -60,8 +60,6 @@ Then('the next button should not be clickable.', async function () {
 });
 
 
-
-
 When('User is on the start application page', async function () {
 
     await expect(startApplicationPage.startApplicationText).toBeVisible();
@@ -71,44 +69,71 @@ When('User is on the start application page', async function () {
 Then('Start Application should display in blue', async function () {
 
     const StartAppColor = await startApplicationPage.startApplicationStepCircle.evaluate(el => getComputedStyle(el).borderColor);
-    expect(StartAppColor).toBe('rgb(0, 123, 255)');
+    expect(StartAppColor).toBe('rgb(1, 201, 255)');
 });
 
 Then('Payment Plan and Review should display in grey.', async function () {
 
     const paymentPlanColor = await startApplicationPage.paymentPlanStepCircle.evaluate(el => getComputedStyle(el).borderColor);
-    expect(paymentPlanColor).toBe('rgb(192, 192, 192)');
+    expect(paymentPlanColor).toBe('rgb(217, 226, 236)');
 
     const reviewColor = await startApplicationPage.reviewStepCircle.evaluate(el => getComputedStyle(el).borderColor);
-    expect(reviewColor).toBe('rgb(192, 192, 192)');
+    expect(reviewColor).toBe('rgb(217, 226, 236)');
 });
 
 When('User is on the payment plan page', async function () {
 
     await expect(startApplicationPage.paymentPlanText).toBeVisible();
 
+    let paymentPlantext = await paymentPlanPage.chooseAPaymentPlanText;
+    await expect(paymentPlantext).toContainText("Choose a payment plan");
+
 });
 
 Then('Payment Plan should display in blue', async function () {
+
+    const paymentPlanColor = await startApplicationPage.paymentPlanStepCircle.evaluate(el => getComputedStyle(el).borderColor);
+    expect(paymentPlanColor).toBe('rgb(1, 201, 255)');
 
 });
 
 Then('Start Application should display green', async function () {
 
+    const StartAppColor = await startApplicationPage.startApplicationStepCircle.evaluate(el => getComputedStyle(el).borderColor);
+    expect(StartAppColor).toBe('rgb(172, 245, 138)');
+
 });
 
 Then('Review Page should display in grey.', async function () {
 
+    const reviewColor = await startApplicationPage.reviewStepCircle.evaluate(el => getComputedStyle(el).borderColor);
+    expect(reviewColor).toBe('rgb(217, 226, 236)');
+
 });
 
-When('User is on the review page', async function () {
+Then('user selects the payment plan', async function () {
+
+    await paymentPlanPage.perMonthTextInstallments.click();
+
+    
+});
+
+Then('user clicks on the next button', async function () {
+
+    await paymentPlanPage.nextButton.click();
 
 });
+
 
 Then('Review Page should display in blue', async function () {
+    const reviewColor = await startApplicationPage.reviewStepCircle.evaluate(el => getComputedStyle(el).borderColor);
+    expect(reviewColor).toBe('rgb(1, 201, 255)');
 
 });
 
-Then('Payment Plan should display green', async function () {
+Then('Payment Plan should display in green', async function () {
+
+    const paymentPlanColor = await startApplicationPage.paymentPlanStepCircle.evaluate(el => getComputedStyle(el).borderColor);
+    expect(paymentPlanColor).toBe('rgb(172, 245, 138)');
 
 });
