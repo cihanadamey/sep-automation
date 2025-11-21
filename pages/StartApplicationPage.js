@@ -15,7 +15,7 @@ export class StartApplicationPage extends BasePage {
 
     this.reviewText = page.locator("//div[@class = 'step-title'][3]");
 
-    this.startApplicationStepCircle = page.locator("//span[text()='1']");
+    this.startApplicationStepCircle = page.locator("//div[@class='step-circle' and span='1']");
 
     this.paymentPlanStepCircle = page.locator("(//*[@class='step-circle'])[2]");
 
