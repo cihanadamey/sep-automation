@@ -15,3 +15,13 @@ Feature: Display the product information
 
     Background:
         Given user is on the enrollment page
+
+        Scenario: User should see the correct product info.
+        When User is on the enrollment page
+        Then User should see the same product name that matched on the information card
+        And User should see the price on the information card
+        And User should see the information about the flexible payment plan
+        And User should see the start date and the refund policy on the information card
+
+
+    
