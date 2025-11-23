@@ -38,7 +38,7 @@ export class PaymentPlanPage extends BasePage {
     );
 
     this.couponAvailableBadgeUpfrontDiscount = page.locator(
-      "//mat-chip[contains(@class, 'coupon-badge')]"
+      "//mat-chip[@id='mat-mdc-chip-1']"
     );
 
     this.couponBoxCloseBtnX = page.locator(
