@@ -28,9 +28,6 @@ module.exports = {
      * Report formats to be generated.
      * @type {string[]}
      */
-    import { setDefaultTimeout } from '@cucumber/cucumber';
-    setDefaultTimeout(60 * 1000);
-    ,
 
     format: [
       "progress-bar",
